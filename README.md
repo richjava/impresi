@@ -1,6 +1,6 @@
-# This is a work in progress
+# Impresi //This is a work in progress
 
-Impresi is a Javascript library for creating slide presentations.
+Impresi is a Javascript library for creating beautiful slide presentations.
 
 ## Installation
 ### Through NPM
@@ -79,7 +79,7 @@ createBackground([options]) : Impresi
 ##### options
 Type: Object
 An optional plain object with sets of key/value pairs that configure the background. All properties are optional.
-| Property | Type | Description | Default
+| Property | Type | Description | Default |
 | ------ | ------ | ------ | ------ |
 | backgroundColor | String | Background color of background. | "#333" |
 | imageUrl | String | Url of background image. | None |
@@ -114,7 +114,7 @@ The text to set as the content of the heading. Required.
 ##### options
 Type: Object
 An optional plain object with sets of key/value pairs that configure the heading. All properties are optional.
-| Property | Type | Description | Default
+| Property | Type | Description | Default |
 | ------ | ------ | ------ | ------ |
 | fontSize | Integer | Size of font measured in percentage of the screen width. | 4 |
 | fontColor | String | Color of font. | "#fff" |
@@ -154,7 +154,7 @@ The text to set as the content of the blurb. Required.
 ##### options
 Type: Object
 An optional plain object with sets of key/value pairs that configure the blurb. All properties are optional.
-| Property | Type | Description | Default
+| Property | Type | Description | Default |
 | ------ | ------ | ------ | ------ |
 | fontSize | Integer | Size of font measured in percentage of the screen width. | 3 |
 | fontColor | String | Color of font. | "#fff" |
