@@ -14,16 +14,21 @@ npm i impresi --save //WIP!
 
 ## Usage
 ### The Impresi instance
+
 Every Impresi application starts by creating a new Impresi instance:
+
 ````
 let impresi = new Impresi("board");
 ````
+
 In the above example, "board" is the ID of the HTML element acting as a container for the Impresi board, for example:
+
 ````
 <div id="board"></div>
 ````
 
 The easiest way to use Impresi is to pass a configuration object to the Impresi instance:
+
 ````
  let config = {
     resources: [
@@ -52,7 +57,9 @@ The easiest way to use Impresi is to pass a configuration object to the Impresi 
   let impresi = new Impresi("board", config);
   impresi.start();
 ````
+
 The same can be achieved by chaining methods together, like so:
+
 ````
 let b1 = impresi.createBackground(options: {
           "backgroundColor": "#e6f7ea"
@@ -70,18 +77,16 @@ impresi
 impresi.start();
 ````
 
-
 ## Methods
 ### createBackground
 ````
 createBackground([options]) : Impresi
 ````
 ##### options
+
 Type: Object
+
 An optional plain object with sets of key/value pairs that configure the background. All properties are optional.
-| Property | Type | Description | Default |
-| ------ | ------ | ------ | ------ |
-| backgroundColor | String | Background color of background. | #333 |
 
 | Property | Type | Description | Default |
 | ------ | ------ | ------ | ------ |
@@ -112,12 +117,18 @@ let b1 = impresi.createBackground({
 createHeading(text, [options]) : Impressi
 ````
 ##### text
+
 Type: String
+
 The text to set as the content of the heading. Required.
 
+
 ##### options
+
 Type: Object
+
 An optional plain object with sets of key/value pairs that configure the heading. All properties are optional.
+
 | Property | Type | Description | Default |
 | ------ | ------ | ------ | ------ |
 | fontSize | Integer | Size of font measured in percentage of the screen width. | 4 |
@@ -125,6 +136,7 @@ An optional plain object with sets of key/value pairs that configure the heading
 | backgroundColor | String | Color of heading background. | "#333" |
 | x | Integer | Horizontal point of the heading measured as a percentage of the screen width. | 10 |
 | y | Integer | Vertical point of the heading measured as a percentage of the screen height. | 10 |
+
 ### Example
 ````
 //by config
@@ -147,17 +159,23 @@ let b1h1 = impresi.createHeading(
     }
   );
 ````
+
 ### createBlurb
+
 ````
 createBlurb(text, [options]) : Impresi
 ````
+
 ##### text
 Type: String
+
 The text to set as the content of the blurb. Required.
 
 ##### options
 Type: Object
+
 An optional plain object with sets of key/value pairs that configure the blurb. All properties are optional.
+
 | Property | Type | Description | Default |
 | ------ | ------ | ------ | ------ |
 | fontSize | Integer | Size of font measured in percentage of the screen width. | 3 |
@@ -165,7 +183,9 @@ An optional plain object with sets of key/value pairs that configure the blurb. 
 | backgroundColor | String | Color of heading background. | "#333" |
 | x | Integer | Horizontal point of the heading measured as a percentage of the screen width. | 10 |
 | y | Integer | Vertical point of the heading measured as a percentage of the screen height. | 10 |
+
 #### Example
+
 ````
 //by config
 {
@@ -186,20 +206,33 @@ let b1b1 = impresi.createBlurb(
     }
   );
 ````
+
 ### addActions
+
 ````
 addActions(actions) : Impresi
 ````
+
 ##### actions
+
 Type: Object
+
 An plain object the following properties:
+
 ###### in
+
 Type: Array
+
 A collection of items to be displayed on the board.
+
 ###### out
+
 Type: Array
+
 A collection of items to be removed from the board.
+
 #### Example
+
 ````
 impresi
     .addActions({ in: [b1, b1h1, b1b1] })
