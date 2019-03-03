@@ -81,7 +81,11 @@ Type: Object
 An optional plain object with sets of key/value pairs that configure the background. All properties are optional.
 | Property | Type | Description | Default |
 | ------ | ------ | ------ | ------ |
-| backgroundColor | String | Background color of background. | "#333" |
+| backgroundColor | String | Background color of background. | #333 |
+
+| Property | Type | Description | Default |
+| ------ | ------ | ------ | ------ |
+| backgroundColor | String | Background color of background. | #333 |
 | imageUrl | String | Url of background image. | None |
 | x | Integer | Horizontal point of the heading measured as a percentage of the screen width. | 10 |
 | y | Integer | Vertical point of the heading measured as a percentage of the screen height. | 10 |
