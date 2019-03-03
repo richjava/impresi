@@ -90,7 +90,7 @@ An optional plain object with sets of key/value pairs that configure the backgro
 
 | Property | Type | Description | Default |
 | ------ | ------ | ------ | ------ |
-| backgroundColor | String | Background color of background. | #333 |
+| backgroundColor | String | Background color of background. | "#333" |
 | imageUrl | String | Url of background image. | None |
 | x | Integer | Horizontal point of the heading measured as a percentage of the screen width. | 10 |
 | y | Integer | Vertical point of the heading measured as a percentage of the screen height. | 10 |
@@ -133,7 +133,7 @@ An optional plain object with sets of key/value pairs that configure the heading
 | ------ | ------ | ------ | ------ |
 | fontSize | Integer | Size of font measured in percentage of the screen width. | 4 |
 | fontColor | String | Color of font. | "#fff" |
-| backgroundColor | String | Color of heading background. | "#333" |
+| backgroundColor | String | Color of heading background or "transparent" for no background color. | "#333" |
 | x | Integer | Horizontal point of the heading measured as a percentage of the screen width. | 10 |
 | y | Integer | Vertical point of the heading measured as a percentage of the screen height. | 10 |
 
@@ -180,9 +180,9 @@ An optional plain object with sets of key/value pairs that configure the blurb. 
 | ------ | ------ | ------ | ------ |
 | fontSize | Integer | Size of font measured in percentage of the screen width. | 3 |
 | fontColor | String | Color of font. | "#fff" |
-| backgroundColor | String | Color of heading background. | "#333" |
-| x | Integer | Horizontal point of the heading measured as a percentage of the screen width. | 10 |
-| y | Integer | Vertical point of the heading measured as a percentage of the screen height. | 10 |
+| backgroundColor | String | Color of blurb background or "transparent" for no background color. | "#333" |
+| x | Integer | Horizontal point of the blurb measured as a percentage of the screen width. | 10 |
+| y | Integer | Vertical point of the blurb measured as a percentage of the screen height. | 10 |
 
 #### Example
 
