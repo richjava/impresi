@@ -1,7 +1,7 @@
 {
   "name": "impresi",
   "version": "0.0.1",
-  "description": "A Javascript library for creating slide presentations.",
+  "description": "A Javascript library for creating beautiful slide presentations.",
   "main": "app/impresi.js",
   "scripts": {
     "build": "webpack --config webpack-production.config.js --env dev && webpack --config webpack-production.config.js --env build",
@@ -22,7 +22,8 @@
     "webpack",
     "presentation",
     "slides",
-    "library"
+    "library",
+    "npm"
   ],
   "author": "richjavalabs@gmail.com",
   "license": "ISC",
