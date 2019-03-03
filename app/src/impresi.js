@@ -5,7 +5,7 @@ import Group from "./lib/group";
 import Action from "./lib/action";
 import { styles } from './styles';
 
-export default class Impresi {
+class Impresi {
   constructor(boardId, data, options = []) {
     if (!boardId) {
       throw new Error("ID for board is required");
@@ -251,3 +251,5 @@ export default class Impresi {
     });
   }
 }
+
+module.exports = Impresi;
