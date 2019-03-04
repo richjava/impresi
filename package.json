@@ -2,7 +2,7 @@
   "name": "impresi",
   "version": "0.0.4",
   "description": "A Javascript library for creating beautiful slide presentations.",
-  "main": "app/src/impresi.js",
+  "main": "lib/impresi.js",
   "scripts": {
     "build": "webpack --env dev && webpack --env build && npm run test",
     "dev": "webpack --progress --colors --watch --env dev",
