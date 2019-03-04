@@ -1,42 +1,52 @@
 /* global __dirname, require, module*/
 
 const webpack = require('webpack');
-const UglifyJsPlugin = webpack.optimize.UglifyJsPlugin;
 const path = require('path');
 const env = require('yargs').argv.env; // use --env with webpack 2
-let libraryName = 'game-lib';
+const pkg = require('./package.json');
 
-let plugins = [], outputFile;
+let libraryName = pkg.name;
+
+let outputFile, mode;
 
 if (env === 'build') {
-  plugins.push(new UglifyJsPlugin({ minimize: true }));
+  mode = 'production';
   outputFile = libraryName + '.min.js';
 } else {
+  mode = 'development';
   outputFile = libraryName + '.js';
 }
+
 const config = {
-    entry: ['./app/index.js'],
-    output: {
-      path: path.resolve(__dirname, 'build'),
-      filename: outputFile
-    },
-    module: {
-      loaders: [
-        {
-          loader:'babel-loader',
-          test: /\.js$/,
-          exclude:  /node_modules/
-        }
-      ]
-    },
-    resolve: {
-      extensions: ['.js']
-    },
-    devServer:{
-      port: 3000,
-      contentBase: __dirname + '/build',
-      inline: true
-    },
-    plugins: plugins
-}
+  mode: mode,
+  entry: __dirname + '/src/index.js',
+  devtool: 'inline-source-map',
+  output: {
+    path: __dirname + '/lib',
+    filename: outputFile,
+    library: libraryName,
+    libraryTarget: 'umd',
+    umdNamedDefine: true,
+    globalObject: "typeof self !== 'undefined' ? self : this"
+  },
+  module: {
+    rules: [
+      {
+        test: /(\.jsx|\.js)$/,
+        loader: 'babel-loader',
+        exclude: /(node_modules|bower_components)/
+      },
+      {
+        test: /(\.jsx|\.js)$/,
+        loader: 'eslint-loader',
+        exclude: /node_modules/
+      }
+    ]
+  },
+  resolve: {
+    modules: [path.resolve('./node_modules'), path.resolve('./src')],
+    extensions: ['.json', '.js']
+  }
+};
+
 module.exports = config;
