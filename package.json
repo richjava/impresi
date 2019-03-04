@@ -1,6 +1,6 @@
 {
   "name": "impresi",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A Javascript library for creating beautiful slide presentations.",
   "main": "app/src/impresi.js",
   "scripts": {
