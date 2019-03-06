@@ -28,6 +28,7 @@ import Heading from './lib/heading';
 import Blurb from './lib/blurb';
 import Group from './lib/group';
 import Action from './lib/action';
+import Image from './lib/image';
 import { styles } from './styles';
 
 (function (global, factory) {
@@ -126,6 +127,9 @@ import { styles } from './styles';
 
     createBlurb(text, options) {
       return new Blurb(this, text, options);
+    }
+    createImage(src, options) {
+      return new Image(this, src, options);
     }
 
     addActions(options) {
@@ -259,6 +263,9 @@ import { styles } from './styles';
             break;
           case 'blurb':
             items.push(this.createBlurb(resource.text, resource.options));
+            break;
+          case 'image':
+            items.push(this.createImage(resource.src, resource.options));
             break;
           default:
             return;

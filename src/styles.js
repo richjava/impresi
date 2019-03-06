@@ -43,7 +43,8 @@ p {
 
 .heading,
 .blurb,
-.background {
+.background,
+.image {
   position: absolute;
   background-color: #333;
 }
@@ -114,9 +115,15 @@ p {
 
 @media only screen and (max-width: 600px) {
   .heading,
-  .blurb {
+  .blurb,
+  .image {
     position: static;
     display: block;
+  }
+
+  .image {
+    width: 100vw;
+    max-width: 100vw !important;
   }
 
   .heading h1 {

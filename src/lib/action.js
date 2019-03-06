@@ -1,7 +1,6 @@
 export default class Action {
     constructor(item) {
       this.item = item;
-      this.defaul
       this.inAnimationName =
         this.item.options.inAnimationName != undefined
           ? item.options.inAnimationName

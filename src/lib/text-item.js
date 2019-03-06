@@ -20,16 +20,14 @@ export default class TextItem extends AbsoluteItem {
     }
 
     setChildOptions(child) {
-        // if (this.options.fontSize) {
-            child.style.fontSize = `${this.getFontSize()}vw`;
-        // }
+        child.style.fontSize = `${this.getFontSize()}vw`;
         if (this.options.fontColor) {
             child.style.color = this.options.fontColor;
         }
     }
 
-    getFontSize(){
+    getFontSize() {
         return this.options.fontSize != undefined
-        ? this.options.fontSize : this.defaultFontSize;
-      }
+            ? this.options.fontSize : this.defaultFontSize;
+    }
 }

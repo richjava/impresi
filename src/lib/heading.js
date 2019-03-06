@@ -5,7 +5,7 @@ export default class Heading extends TextItem {
     this.text = text;
     this.zIndex = 1;
     this.defaultFontSize = 2;
-    this.addElement("span");
+    this.addElement("div");
   }
 
   addElement(elementName) {

@@ -51,8 +51,7 @@ The easiest way to use Impresi is to pass a configuration object to the Impresi 
       }
     ],
     actions: [
-      { in: ["b1", "b1h1"] },
-      { out: [b1, b1h1], in: [more_items_go_here] }
+      { in: ["b1", "b1h1"] }
     ]
   };
 
@@ -74,8 +73,7 @@ let b1 = impresi.createBackground(options: {
     }
   );
 impresi
-    .addActions({ in: [b1, b1h1] })
-    .addActions({out: [b1, b1h1], in: [more_items_go_here]);
+    .addActions({ in: [b1, b1h1] });
 impresi.start();
 ````
 
@@ -136,6 +134,7 @@ An optional plain object with sets of key/value pairs that configure the heading
 | fontSize | Integer | Size of font measured in percentage of the screen width. | 4 |
 | fontColor | String | Color of font. | "#fff" |
 | backgroundColor | String | Color of heading background or "transparent" for no background color. | "#333" |
+| width | Integer | Width of the image  measured as a percentage of the screen width. | None |
 | x | Integer | Horizontal point of the heading measured as a percentage of the screen width. | 10 |
 | y | Integer | Vertical point of the heading measured as a percentage of the screen height. | 10 |
 
@@ -183,6 +182,7 @@ An optional plain object with sets of key/value pairs that configure the blurb. 
 | fontSize | Integer | Size of font measured in percentage of the screen width. | 3 |
 | fontColor | String | Color of font. | "#fff" |
 | backgroundColor | String | Color of blurb background or "transparent" for no background color. | "#333" |
+| width | Integer | Width of the image  measured as a percentage of the screen width. | None |
 | x | Integer | Horizontal point of the blurb measured as a percentage of the screen width. | 10 |
 | y | Integer | Vertical point of the blurb measured as a percentage of the screen height. | 10 |
 
@@ -207,6 +207,51 @@ let b1b1 = impresi.createBlurb(
       y: 15
     }
   );
+````
+
+### createImage
+````
+createImage(src, [options]) : Impresi
+````
+##### src
+Type: String
+
+The value of the src attribute of the image. Required.
+
+##### options
+
+Type: Object
+
+An optional plain object with sets of key/value pairs that configure the image. All properties are optional.
+
+| Property | Type | Description | Default |
+| ------ | ------ | ------ | ------ |
+| width | Integer | Width of the image  measured as a percentage of the screen width. | None |
+| x | Integer | Horizontal point of the heading measured as a percentage of the screen width. | 10 |
+| y | Integer | Vertical point of the heading measured as a percentage of the screen height. | 10 |
+
+#### Example
+````
+//by config
+{
+  id: "b1i1",
+  type: "image",
+  src: "https://uploads.codesandbox.io/uploads/user/fb7343ed-58b4-4220-b73d-9c46dd5128c4/rtO9-christchurchartgallery_002_1024x1024.jpg",
+  options: {
+    width: 50,
+    x: 26,
+    y: 30
+  }
+}
+//by code
+let b1 = impresi.createImage({
+    src: "https://uploads.codesandbox.io/uploads/user/fb7343ed-58b4-4220-b73d-9c46dd5128c4/rtO9-christchurchartgallery_002_1024x1024.jpg",
+    options: {
+      width: 50,
+      x: 26,
+      y: 30
+    }
+  });
 ````
 
 ### addActions
