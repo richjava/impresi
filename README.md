@@ -2,6 +2,8 @@
 
 Impresi is a Javascript library for creating beautiful slide presentations.
 
+[Demo](https://538mkz3prl.codesandbox.io)
+
 ## Installation
 ### Through CDN
 ````
