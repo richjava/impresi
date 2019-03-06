@@ -94,6 +94,7 @@ An optional plain object with sets of key/value pairs that configure the backgro
 | ------ | ------ | ------ | ------ |
 | backgroundColor | String | Background color of background. | "#333" |
 | imageUrl | String | Url of background image. | None |
+| inAnimationName | String | Animate.css class name for in animation. | "fadeIn" |
 | x | Integer | Horizontal point of the heading measured as a percentage of the screen width. | 10 |
 | y | Integer | Vertical point of the heading measured as a percentage of the screen height. | 10 |
 
@@ -137,6 +138,7 @@ An optional plain object with sets of key/value pairs that configure the heading
 | fontColor | String | Color of font. | "#fff" |
 | backgroundColor | String | Color of heading background or "transparent" for no background color. | "#333" |
 | width | Integer | Width of the image  measured as a percentage of the screen width. | None |
+| inAnimationName | String | Animate.css class name for in animation. | "slideInUp" |
 | x | Integer | Horizontal point of the heading measured as a percentage of the screen width. | 10 |
 | y | Integer | Vertical point of the heading measured as a percentage of the screen height. | 10 |
 
@@ -185,6 +187,7 @@ An optional plain object with sets of key/value pairs that configure the blurb. 
 | fontColor | String | Color of font. | "#fff" |
 | backgroundColor | String | Color of blurb background or "transparent" for no background color. | "#333" |
 | width | Integer | Width of the image  measured as a percentage of the screen width. | None |
+| inAnimationName | String | Animate.css class name for in animation. | "slideInUp" |
 | x | Integer | Horizontal point of the blurb measured as a percentage of the screen width. | 10 |
 | y | Integer | Vertical point of the blurb measured as a percentage of the screen height. | 10 |
 
@@ -229,6 +232,7 @@ An optional plain object with sets of key/value pairs that configure the image. 
 | Property | Type | Description | Default |
 | ------ | ------ | ------ | ------ |
 | width | Integer | Width of the image  measured as a percentage of the screen width. | None |
+| inAnimationName | String | Animate.css class name for in animation. | "slideInUp" |
 | x | Integer | Horizontal point of the heading measured as a percentage of the screen width. | 10 |
 | y | Integer | Vertical point of the heading measured as a percentage of the screen height. | 10 |
 

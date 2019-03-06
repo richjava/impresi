@@ -2,7 +2,7 @@ import AbsoluteItem from "./absolute-item";
 export default class TextItem extends AbsoluteItem {
     constructor(impresi, options) {
         super(impresi, options);
-        this.defaultInAnimationName = "slideInUp";
+        super.defaultInAnimationName = "slideInUp";
 
     }
 
@@ -15,8 +15,7 @@ export default class TextItem extends AbsoluteItem {
         if (this.options.backgroundColor) {
             this.element.style.backgroundColor = this.options.backgroundColor;
         }
-        this.options.inAnimationName = this.options.inAnimationName != undefined
-            ? this.options.inAnimationName : this.defaultInAnimationName;
+        
     }
 
     setChildOptions(child) {

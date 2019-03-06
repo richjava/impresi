@@ -2,6 +2,7 @@ import Item from "./item";
 export default class Background extends Item {
   constructor(impresi, options = {}) {
     super(impresi, options);
+    super.defaultInAnimationName = "fadeIn";
     this.addElement("div");
   }
 
