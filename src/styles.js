@@ -114,19 +114,19 @@ p {
 
 
 @media only screen and (max-width: 600px) {
-  .heading,
-  .blurb,
-  .image {
+  .heading:not(.hide),
+  .blurb:not(.hide),
+  .image:not(.hide){
     position: static;
     display: block;
   }
 
-  .image {
+  .image:not(.hide) {
     width: 100vw;
     max-width: 100vw !important;
   }
 
-  .heading h1 {
+  .heading:not(.hide) h1 {
     font-size: 5vw;
   }
 
