@@ -38,7 +38,6 @@ import { styles } from './styles';
 }(this, (function () {
   'use strict';
 
-
    var Impresi = function () {
   class Impresi {
     constructor(boardId, data, options = []) {
