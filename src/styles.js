@@ -18,6 +18,10 @@ p {
   visibility: hidden;
 }
 
+body, .board {
+  overflow: hidden;
+}
+
 .animated {
   visibility: visible;
 }
