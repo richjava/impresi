@@ -48,7 +48,16 @@ import { styles } from './styles';
       if (!this.board) {
         throw new Error('No HTML element with the ID: ' + boardId);
       }
-
+      let self = this;
+      window.onhashchange = function(){ 
+        let newScreenIndex = self.getScreenIndex();
+        if (self.previousScreenIndex < newScreenIndex) {  
+          self.next();
+        } else {
+         
+         self.previous(self.index === self.groups.length - 1);
+       }
+      };
       this.options = options;
       this.groups = [];
       this.screenIndex = 0;
@@ -63,6 +72,7 @@ import { styles } from './styles';
       this.getStyles();
       this.setListeners();
       this.displayLoader();
+     
     }
 
     setListeners() {
@@ -77,15 +87,17 @@ import { styles } from './styles';
         ) {
 
           if (this.index < this.groups.length - 1) {
-            self.next();
+            this.previousScreenIndex = this.screenIndex;
             this.screenIndex++;
             window.location.hash = `screen${this.screenIndex}`;
           }
         }
+
         //decrement keys: up or left
         if (e.keyCode === 38 || e.keyCode === 37) {
-          if (this.index > 0) {
-            self.previous(self.index === self.groups.length - 1);
+          if (this.screenIndex > 1) {
+          this.screenIndex--;
+          window.location.hash = `screen${this.screenIndex}`;
           }
         }
       };
@@ -188,8 +200,6 @@ import { styles } from './styles';
           }
         } else {
           group.run();
-          this.screenIndex--;
-          window.location.hash = `screen${this.screenIndex}`;
         }
       }
     }
@@ -200,12 +210,10 @@ import { styles } from './styles';
       }
       if (window.location.hash) {
         // Fragment exists
-        let frag = window.location.hash;
-        if (frag.match('^#screen[0-9]+$')) {
-          var matches = frag.match('[0-9]+');
-          if (matches) {
-            this.screenIndex = parseInt(matches[0]);
-          }
+        let screenIndex = this.getScreenIndex();
+          if(screenIndex){
+            this.screenIndex = screenIndex;
+       
           if (this.screenIndex > 0 && this.screenIndex <= this.groups.length / 2 + 1) {
             for (let i = 0; i < this.screenIndex; i++) {
               this.next();
@@ -216,13 +224,23 @@ import { styles } from './styles';
             this.next();
           }
         }
-
       } else {
         this.next();
         this.screenIndex++;
         window.location.hash = 'screen1';
       }
       document.querySelector('.overlay').classList.add('hide');
+    }
+
+    getScreenIndex(){
+      let frag = window.location.hash;
+      if (frag.match('^#screen[0-9]+$')) {
+        var matches = frag.match('[0-9]+');
+        if (matches) {
+          return parseInt(matches[0]);
+        }
+      }
+      return null;
     }
 
     increment() {
